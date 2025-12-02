@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Madurai & Dindigul — Explore Heritage</title>
+  <meta name="description" content="Madurai & Dindigul tourism showcase">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#1b1f3b; --accent:#d4a017; --accent2:#6a4cfe; --muted:#f3f4f9; --card:#ffffff; --max:1200px; --headerText:#1a2333;}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; color:#0f2130; background:#fff}
+
+    /* header like screenshots */
+    header{background:linear-gradient(90deg,#ffffff,#f3f5fb); border-bottom:1px solid #dfe5ee;}
+    .nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px}
+    .brand{font-family:'Playfair Display', serif; font-size:26px; color:#1a2333;}
+    .navlinks{display:flex;gap:26px;align-items:center}
+    .navlinks a{color:var(--headerText); text-decoration:none; font-weight:600; letter-spacing:0.6px;}
+
+    /* hero */
+    .hero{background:linear-gradient(135deg,rgba(26,20,67,0.85),rgba(116, 145, 35, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Meenakshi_Amman_Temple_Gopurams%2C_Madurai.jpg') center/cover no-repeat; padding:90px 20px 70px; text-align:center; color:#fff; border-bottom:4px solid var(--accent);}
+    .hero h1{font-family:'Playfair Display', serif; font-size:42px; margin:10px 0 8px; color:#112533}
+    .hero p{max-width:900px;margin:0 auto;color:#f5f5f5;font-size:16px}
+
+    .container{max-width:var(--max);margin:48px auto;padding:0 20px}
+
+    /* top card row - large image cards */
+    .cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    @media(max-width:980px){.cards-row{grid-template-columns:1fr}}
+    .large-card{background:linear-gradient(180deg,rgba(255,255,255,0.96),rgba(245,245,252,0.96)); border-radius:12px; overflow:hidden; box-shadow:0 18px 45px rgba(12,20,40,0.18);}{background:var(--card);border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(15,30,45,0.06);}
+    .large-card img{width:100%;height:300px;object-fit:cover;display:block}
+    .large-card .info{padding:18px}
+    .large-card h3{font-family:'Playfair Display',serif;margin:4px 0 8px;color:#102536}
+    .large-card p{margin:0;color:#55676f}
+
+    /* grid of places (cards with image on top) */
+    .places-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
+    @media(max-width:1100px){.places-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:820px){.places-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.places-grid{grid-template-columns:1fr}}
+
+    .place-card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid #eef3f6}
+    .place-card .thumb{height:170px;overflow:hidden}
+    .place-card .thumb img{width:100%;height:100%;object-fit:cover}
+    .place-card .body{padding:14px}
+    .place-card h4{margin:0 0 8px;font-size:16px;color:#0d2b42}
+    .place-card p{margin:0;color:#6b7f88;font-size:14px}
+    .place-card .actions{margin-top:12px;display:flex;gap:8px}
+    .btn{padding:9px 12px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px}
+    .btn-map{background:linear-gradient(90deg,#6a4cfe,#d4a017); color:#fff; box-shadow:0 10px 25px rgba(36,20,100,0.25);}{background:var(--primary);color:#fff}
+    .btn-preview{background:transparent;border:1px solid #e6eef5;color:var(--primary)}
+
+    /* category tiles like screenshots */
+    .tile{position:relative;height:230px;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(20,20,50,0.22);}s{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    @media(max-width:900px){.tiles{grid-template-columns:1fr}}
+    .tile{position:relative;height:220px;border-radius:8px;overflow:hidden}
+    .tile img{width:100%;height:100%;object-fit:cover;display:block}
+    .tile .label{position:absolute;left:20px;bottom:18px;color:#fff;font-family:'Playfair Display',serif;font-size:22px;text-shadow:0 6px 20px rgba(5,10,20,0.45)}
+
+    /* credits box at bottom */
+    footer{background:#fbfdff;padding:48px 20px;border-top:1px solid #eef2f6}
+    .credits{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .created{background:#fff;border-radius:10px;padding:20px;border:1px solid #eef3f6;box-shadow:0 10px 30px rgba(10,20,30,0.04);flex:1}
+    .created h4{margin:0 0 8px;font-family:'Playfair Display',serif}
+    .created p{margin:0;color:#4f6570}
+    .contact{min-width:260px;text-align:right}
+    .contact p{margin:4px 0;color:#435962}
+
+    /* small responsive tweaks */
+    @media(max-width:820px){.credits{flex-direction:column;text-align:left}.contact{text-align:left}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Madurai • Dindigul Tourism</div>
+      <nav class="navlinks">
+        <a href="#heritage">Heritage</a>
+        <a href="#places">Places</a>
+        <a href="#credits">Credits</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Find curated trips & the best travel spots</h1>
+      <p>Explore the spiritual heritage of Madurai and the historic charm and hill escapes of Dindigul. Choose a place to view more details or open it on the map.</p>
+    </section>
+
+    <div class="container">
+      <div class="cards-row" aria-live="polite">
+        <article class="large-card">
+          <img src="https://cdn.britannica.com/31/242231-050-F879D668/Meenakshi-Temple-Madurai-city-Tamil-Nadu-India.jpg" alt="Meenakshi Amman Temple">
+          <div class="info">
+            <h3>Meenakshi Amman Temple</h3>
+            <p>Famous temple dedicated to Sundareswarar and Goddess Meenakshi — a masterpiece of Dravidian architecture and a living cultural centre.</p>
+          </div>
+        </article>
+
+        <article class="large-card">
+          <img src="https://lakshmisharath.com/wp-content/uploads/2021/01/Madurai-Thirumalainayakmahal-ceiling-art-1024x768.jpg" alt="Thirumalai Nayak Palace">
+          <div class="info">
+            <h3>Thirumalai Nayak Palace</h3>
+            <p>A 17th-century royal palace with grand pillars, stucco work and vast courtyards — a window into Madurai's regal past.</p>
+          </div>
+        </article>
+
+        <article class="large-card">
+          <img src="https://vivaciousanushri.wordpress.com/wp-content/uploads/2015/08/606.jpg" alt="Gandhi Museum Madurai">
+          <div class="info">
+            <h3>Gandhi Memorial Museum</h3>
+            <p>Located in Tamukkam Palace, this museum houses important relics and documents related to Mahatma Gandhi and India's freedom movement.</p>
+          </div>
+        </article>
+      </div>
+
+      <h2 style="margin-top:36px;font-family:'Playfair Display',serif;color:#102536">Places to visit</h2>
+      <div id="places" class="places-grid">
+        <!-- Madurai places -->
+        <div class="place-card">
+          <div class="thumb"><img src="https://i.pinimg.com/736x/9b/ac/c5/9bacc5f35b57dc25f903543a41743329.jpg" alt="Meenakshi"></div>
+          <div class="body"><h4>Meenakshi Amman Temple</h4><p>A historic temple complex and the heart of Madurai's spiritual life.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Meenakshi+Amman+Temple+Madurai" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://www.laurewanders.com/wp-content/uploads/2023/09/Thirumalai-Nayakar-Palace-00002-scaled.jpg" alt="Thirumalai Nayak"></div>
+          <div class="body"><h4>Thirumalai Nayak Palace</h4><p>17th-century palace built by Thirumalai Nayakar, famed for its architecture.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Thirumalai+Nayak+Palace+Madurai" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Gandhi_museum%2C_Madurai.jpg/960px-Gandhi_museum%2C_Madurai.jpg" alt="Gandhi Museum"></div>
+          <div class="body"><h4>Gandhi Memorial Museum</h4><p>Museum with archival material on Mahatma Gandhi and India's independence.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Gandhi+Memorial+Museum+Madurai" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/bc/c2/8c/photo0jpg.jpg?w=900&h=500&s=1" alt="Samanar Hills"></div>
+          <div class="body"><h4>Samanar Hills</h4><p>Caves and rock-cut temples with inscriptions — an archaeological site near Madurai.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Samanar+Hills+Madurai" target="_blank">View Map</a></div></div>
+        </div>
+
+        <!-- Dindigul places -->
+        <div class="place-card">
+          <div class="thumb"><img src="https://www.shutterstock.com/image-photo/dindigul-rock-fort-malai-kottai-600nw-2529758633.jpg" alt="Dindigul Fort"></div>
+          <div class="body"><h4>Dindigul Fort</h4><p>An historic fort from 1605 offering panoramic views and military heritage.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Dindigul+Fort" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://aruntrails.wordpress.com/wp-content/uploads/2017/09/ac40f-sirumalai.jpg" alt="Sirumalai"></div>
+          <div class="body"><h4>Sirumalai</h4><p>Scenic hill destination reached via an 18–hairpin road, popular for short treks.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Sirumalai+Hill" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://assets.cntraveller.in/photos/6572e6f51e37532070f75122/master/w_1600%2Cc_limit/View%2520from%2520Guna%2520Cave%2520point%25201.jpg" alt="Kodaikanal"></div>
+          <div class="body"><h4>Kodaikanal (Nearby)</h4><p>Popular hill station — the "Princess of Hill Stations" — about 94 km from Dindigul.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Kodaikanal" target="_blank">View Map</a></div></div>
+        </div>
+
+        <div class="place-card">
+          <div class="thumb"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwL-FNLeh0lm-x0W5cQQJWzDSZCzmqzygzsQ&s" alt="Saint Joseph Church"></div>
+          <div class="body"><h4>Saint Joseph Church</h4><p>A colonial-era church in Dindigul known for its calm ambiance and community services.</p>
+          <div class="actions"><a class="btn btn-map" href="https://www.google.com/maps/search/Saint+Joseph+Church+Dindigul" target="_blank">View Map</a></div></div>
+        </div>
+      </div>
+
+      <!-- category tiles -->
+      <div class="tiles">
+        <div class="tile"><img src="https://content.skyscnr.com/m/517387a72f083c22/original/Feb-25-B2-IN-8-Hill-Tamilnadu_1B_1.jpg?resize=1224%3Aauto" alt="Hills"><div class="label">Hills</div></div>
+        <div class="tile"><img src="https://www.oyorooms.com/blog/wp-content/uploads/2019/06/Meenakshi-Amman-Temple-Madurai-10-Best-Temples-of-Tamil-Nadu-1.jpg" alt="Temples"><div class="label">Temples</div></div>
+        <div class="tile"><img src="https://questionofcities.org/wp-content/uploads/2024/11/Retelling-and-celebrating-the-legend-of-Madurai-Veeran-.png" alt="Cuisine"><div class="label">Cuisine & Culture</div></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="credits">
+    <div class="credits">
+      <div class="created">
+        <h4>Created by</h4>
+        <p><strong>Karthick Chidambaram S</strong>, <strong>Jeya Surya K V</strong>, <strong>Hariharan K S</strong></p>
+        <p style="margin-top:8px;color:#4c6771;">This site showcases heritage and places to visit around Madurai and Dindigul.</p>
+      </div>
+      <div class="contact">
+        <p><strong>Contact</strong></p>
+        <p>Email: <a href="mailto:suryakv1723@gmail.com">suryakv1723@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919867654387">+91 98676 54387</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
